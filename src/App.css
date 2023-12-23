@@ -1,38 +1,138 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.h1 {
+  font-size: 30px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.h2 {
+  font-size: 15px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.h3 {
+  font-size: 12px;
+}
+
+
+.taskMainContainer{
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+.taskContainer {
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 20px;
+  max-width: 450px;
+}
+
+.taskContainer .left,
+.taskContainer .right {
+  display: flex;
+  gap: 5px;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.taskHeader {
+  width: 100%;
+  padding: 0px 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+}
+
+/*------------------------------  Task Card ---------------------------------*/
+.taskCard {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 8px 0px #0000001a;
+  background-color: #ffff;
+  width: 100%;
+}
+
+.topLine {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.topLine span {
+  color: gray;
+}
+
+.bottomLine {
+  display: flex;
+  gap: 5px;
+}
+
+.tagContainer {
+  width: fit-content;
+  padding: 5px;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  border: 1px solid gray;
+  border-radius: 4px;
+}
+
+.middleLine {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 5px;
+}
+
+.tagCircle {
+  height: 8px;
+  width: 8px;
+  border-radius: 55%;
+  background-color: gray;
+}
+
+.profileIcon {
+  position: relative;
+  height: 30px;
+  width: 30px;
+  background-color: red;
   color: white;
+  border-radius: 55%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+.taskIcon {
+  width: 18px;
+  /* opacity: 0; */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.profileIcon .active {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  border-radius: 55%;
+  background-color: yellow;
+  height: 10px;
+  width: 10px;
 }
+
+@media only screen and (max-width:1000px){
+}
+/*----------------------------------------------------------------*/
