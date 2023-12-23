@@ -123,6 +123,7 @@
 
 .taskIcon {
   width: 18px;
+  cursor: pointer;
   /* opacity: 0; */
 }
 

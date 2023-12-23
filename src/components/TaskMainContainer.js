@@ -3,7 +3,6 @@ import TaskHeader from './TaskHeader';
 import TaskCard from './TaskCard';
 
 const TaskMainContainer = ({title,taskList}) => {
-    console.log(title,taskList);
     const userData=JSON.parse(localStorage.getItem("userData"))
     return (
         <div className="taskContainer">

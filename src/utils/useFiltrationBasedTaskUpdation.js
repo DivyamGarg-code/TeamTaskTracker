@@ -63,6 +63,8 @@ export const useFiltrationBasedTaskUpdation = (grouping, sorting,setFilteredData
         })
         // Update the data in local storage
         localStorage["groupedData"] = JSON.stringify(groupedData);
+        localStorage["grouping"] = JSON.stringify(grouping);
+        localStorage["sorting"] = JSON.stringify(sorting);
         setFilteredData(Object.entries(JSON.parse(localStorage.getItem("groupedData"))));
         return;
     }

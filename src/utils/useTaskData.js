@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 
-export const useTaskData = (setFilteredData) => {
+export const useTaskData = (setFilteredData,grouping,sorting) => {
   function sortByTitle(a, b) {
     const titleA = a.title.toLowerCase();
     const titleB = b.title.toLowerCase();
@@ -68,10 +68,14 @@ export const useTaskData = (setFilteredData) => {
       localStorage.setItem("data", JSON.stringify(data));
       localStorage.setItem("userData", JSON.stringify(userData));
       localStorage.setItem("priorityData", JSON.stringify(priorityData));
+      localStorage.setItem("grouping", JSON.stringify(grouping));
+      localStorage.setItem("sorting", JSON.stringify(sorting));
     } else {
       localStorage["groupedData"] = JSON.stringify(groupedData);
       localStorage["userData"] = JSON.stringify(userData);
       localStorage["priorityData"] = JSON.stringify(priorityData);
+      localStorage["grouping"] = JSON.stringify(grouping);
+      localStorage["sorting"] = JSON.stringify(sorting);
     }
     return groupedData;
   }
@@ -88,12 +92,14 @@ export const useTaskData = (setFilteredData) => {
       return acc;
     }, {});
 
-    getFilteredData("status","title", json, userData); // By Default
+    getFilteredData(grouping,sorting, json, userData); // By Default
     setFilteredData(Object.entries(JSON.parse(localStorage.getItem("groupedData"))));
 
   }
   useEffect(() => {
-    getTaskData();
+    if(!localStorage["data"]){
+      getTaskData();
+    }
   }, []);
 }
 

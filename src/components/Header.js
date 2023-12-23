@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
 import useFiltrationBasedTaskUpdation from '../utils/useFiltrationBasedTaskUpdation';
 
-const Header = ({ setFilteredData }) => {
-  const [grouping, setGrouping] = useState('status'); // Default grouping value
-  const [sorting, setSorting] = useState('title'); // Default sorting value
+const Header = ({ setFilteredData, grouping, sorting,setGrouping, setSorting }) => {
   const handleGroupingChange = (event) => {
     setGrouping(event.target.value);
   };
