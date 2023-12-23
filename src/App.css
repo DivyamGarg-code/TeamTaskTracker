@@ -16,7 +16,9 @@
   font-size: 12px;
 }
 
-
+.wrapper{
+  background-color: rgba(128, 128, 128, 0.173);
+}
 .taskMainContainer{
   display: flex;
   flex-direction: row;
@@ -33,7 +35,8 @@
   justify-content: flex-start;
   align-items: flex-start;
   gap: 20px;
-  max-width: 450px;
+  max-width: 400px;
+  width: 100%;
 }
 
 .taskContainer .left,
